@@ -1,0 +1,5 @@
+Pods/
+SocketIOExam.xcworkspace
+Podfile.lock
+/.svn
+*.svn*
