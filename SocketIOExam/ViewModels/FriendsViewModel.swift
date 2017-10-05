@@ -8,27 +8,74 @@
 
 import UIKit
 
-class ConversationsViewModel: NSObject {
+class ConversationsViewModel: BaseViewModel {
     private(set) var conversations : [Conversation]?
+    private(set) var friends : [Friend]?
     
     func fetchData(finished : ()->()) {
-        let friend1 = Friend()
-        friend1.name = "Ding ding doong"
-        friend1.profileImageName = "zuckprofile"
-        let conversation1 = Conversation()
-        conversation1.friend = friend1
-        conversation1.text = "Dude please pick up my bae at 5 o'clock"
-        conversation1.timestamp = Date().timeIntervalSince1970
-        
-        let friend2 = Friend()
-        friend2.name = "Duddle dudling Duck"
-        friend2.profileImageName = "zuckprofile"
-        let conversation2 = Conversation()
-        conversation2.friend = friend2
-        conversation2.text = "Those craps in front of our house need to be cleaned"
-        conversation2.timestamp = Date().timeIntervalSince1970
-        
-        finished()
+        friends = []
+        conversations = []
+        self.coreData.fetch( Friend.self ,
+                             query: "",
+                             params: [],
+                             sortDesc: nil) { [weak self] (error, results) in
+            guard let weakSelf = self else {
+                return
+            }
+            
+            if results.count == 0 {
+                if let entityFriend = Friend.getEntity(weakSelf.context),
+                    let entityConversation = Conversation.getEntity(weakSelf.context){
+                    let friend1 = Friend(entity: entityFriend, insertInto: weakSelf.context)
+                    friend1.name = "CODY"
+                    friend1.profilePicture = "zuckprofile"
+                    friend1.portID = SocketIOManager.shared.userID
+                    
+                    let friend2 = Friend(entity: entityFriend, insertInto: weakSelf.context)
+                    friend2.name = "MARK SUCKS"
+                    friend2.profilePicture = "steveprofile"
+                    friend2.portID = 23845729
+                    
+                    let friend3 = Friend(entity: entityFriend, insertInto: weakSelf.context)
+                    friend3.name = "Hillary"
+                    friend3.profilePicture = "hillaryprofile"
+                    friend3.portID = 24890234
+                    
+                    let friend4 = Friend(entity: entityFriend, insertInto: weakSelf.context)
+                    friend4.name = "MARK @"
+                    friend4.profilePicture = "zuckprofile"
+                    friend4.portID = 37562830
+                    //temp conversations
+                    let conversation1 = Conversation(entity: entityConversation, insertInto: weakSelf.context)
+                    conversation1.lastUpdate = Date().timeIntervalSince1970
+                    conversation1.paticipants = [friend1, friend2]
+                    let conversation2 = Conversation(entity: entityConversation, insertInto: weakSelf.context)
+                    conversation2.lastUpdate = Date().timeIntervalSince1970
+                    conversation2.paticipants = [friend1, friend3]
+                    let conversation3 = Conversation(entity: entityConversation, insertInto: weakSelf.context)
+                    conversation3.lastUpdate = Date().timeIntervalSince1970
+                    conversation3.paticipants = [friend1, friend4]
+                    
+                    self?.friends = [friend1 , friend2,friend3, friend4]
+                    self?.coreData.saveContext()
+                }
+            }
+            else {
+                self?.friends = results
+            }
+            
+            
+            // get temp profile
+           if let temp = self?.friends?.first(where: {$0.name == "CODY"}) {
+            AppInfo.shared.currentUser = temp
+            self?.conversations = AppInfo.shared.currentUser?.paticipatedConversations?.allObjects as? [Conversation]
+            }
+                                
+            self?.conversations?.sort(by: {$0.lastUpdate > $1.lastUpdate})
+           
+            
+            finished()
+        }
         
     }
     
@@ -44,16 +91,28 @@ class ConversationsViewModel: NSObject {
     }
     
     func configureCellFor(cell : ConversationCollectionViewCell, conversation : Conversation) {
-        cell.imgAvatar.image = UIImage(named : conversation.friend?.profileImageName ?? "")
-        cell.imgHasReadMessage.image = UIImage(named : "zuckprofile")
-        cell.lblMessage.text = conversation.text
         
-        let date = Date(timeIntervalSinceReferenceDate: conversation.timestamp
-            ?? Date().timeIntervalSince1970)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a";
-        cell.lblTime.text = dateFormatter.string(from: date)
-        cell.lblName.text = conversation.friend?.name ?? "Unknown"
+        if let friend = conversation.paticipants?.first(where: {($0 as! Friend).name != "CODY"}) as? Friend {
+            
+            cell.imgAvatar.image = UIImage(named : friend.profilePicture ?? "")
+            cell.imgHasReadMessage.image = UIImage(named : "zuckprofile")
+            
+            //message
+            if let message = conversation.messages?.lastObject as? Message {
+                cell.lblMessage.text = message.text
+            }
+            else {
+                cell.lblMessage.text = ""
+            }
+            
+            let date = Date(timeIntervalSinceReferenceDate: conversation.lastUpdate)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:mm a";
+            cell.lblTime.text = dateFormatter.string(from: date)
+            cell.lblName.text = friend.name ?? "Unknown"
+        }
+        
+        
     }
     
 }

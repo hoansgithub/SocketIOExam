@@ -10,7 +10,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    lazy var coreDataStack = CoreDataStack()
     var window: UIWindow?
 
 
@@ -20,9 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let layout = UICollectionViewFlowLayout()
-        let viewController = FriendsViewController(collectionViewLayout: layout)
-        window?.rootViewController = UINavigationController(rootViewController: viewController)
+        
+        window?.rootViewController = MainTabbarController()
         
         return true
     }
@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        coreDataStack.saveContext()
         SocketIOManager.shared.closeConnection()
     }
 
@@ -49,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        coreDataStack.saveContext()
     }
 
 

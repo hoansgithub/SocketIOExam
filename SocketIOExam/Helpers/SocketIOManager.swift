@@ -10,7 +10,7 @@ import UIKit
 import SocketIO
 class SocketIOManager: NSObject {
     static let shared  = SocketIOManager()
-    let userID = 37562834
+    let userID : Int32 = 37562834
     private var socket : SocketIOClient?
     private override init() {
         if let url = URL(string: "http://10.10.253.105:3000") {

@@ -8,36 +8,54 @@
 
 /* Begin PBXBuildFile section */
 		07C389FBCBE3FE9A37D85F3A /* Pods_SocketIOExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBED74DD750FD7AF31A5DC39 /* Pods_SocketIOExam.framework */; };
-		862D77E91F79F0CA008258ED /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D77E81F79F0CA008258ED /* UIViewExt.swift */; };
-		862D77EC1F7A140A008258ED /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D77EB1F7A140A008258ED /* Conversation.swift */; };
-		862D77EE1F7A1421008258ED /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D77ED1F7A1421008258ED /* Friend.swift */; };
+		862B08051F7DF3D500CF563B /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862B08041F7DF3D500CF563B /* AppInfo.swift */; };
+		862B08071F7DF8A000CF563B /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862B08061F7DF8A000CF563B /* MainTabbarController.swift */; };
+		862B08091F7DFEEF00CF563B /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862B08081F7DFEEF00CF563B /* ChatLogViewController.swift */; };
+		862B080B1F7DFF8600CF563B /* ChatLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862B080A1F7DFF8600CF563B /* ChatLogViewModel.swift */; };
+		862B080D1F7E05E200CF563B /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862B080C1F7E05E200CF563B /* MessageCollectionViewCell.swift */; };
 		862D77F11F7A37D3008258ED /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D77F01F7A37D3008258ED /* FriendsViewModel.swift */; };
 		862D77F41F7A3FD5008258ED /* ConversationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D77F31F7A3FD5008258ED /* ConversationCollectionViewCell.swift */; };
-		8668A08F1F736CEF0074DF7B /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668A08E1F736CEF0074DF7B /* SocketIOManager.swift */; };
+		862D77F81F7A4656008258ED /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D77F71F7A45AE008258ED /* UIViewExt.swift */; };
+		862D77FB1F7A46C1008258ED /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D77FA1F7A46BF008258ED /* FriendsViewController.swift */; };
+		862D77FE1F7A46F2008258ED /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D77FD1F7A46EF008258ED /* SocketIOManager.swift */; };
+		868A09E01F7B43E00011C1E7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868A09DF1F7B43E00011C1E7 /* CoreDataStack.swift */; };
+		868A0A011F7BA0640011C1E7 /* NSManagedObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868A0A001F7BA0640011C1E7 /* NSManagedObjectExt.swift */; };
+		86CEA4021F7C9DE000D0E788 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEA4011F7C9DE000D0E788 /* BaseViewModel.swift */; };
+		86CEA4091F7CA9B200D0E788 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEA4081F7CA9B200D0E788 /* Conversation.swift */; };
+		86CEA40B1F7CA9C300D0E788 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEA40A1F7CA9C300D0E788 /* Friend.swift */; };
+		86CEA40D1F7CA9CF00D0E788 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEA40C1F7CA9CF00D0E788 /* Message.swift */; };
+		86CEA4111F7CD07600D0E788 /* SocketIOExam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86CEA4061F7CA99100D0E788 /* SocketIOExam.xcdatamodeld */; };
 		86F4E02F1F72732A00EB91FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4E02E1F72732A00EB91FC /* AppDelegate.swift */; };
-		86F4E0311F72732A00EB91FC /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4E0301F72732A00EB91FC /* FriendsViewController.swift */; };
 		86F4E0341F72732A00EB91FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F4E0321F72732A00EB91FC /* Main.storyboard */; };
 		86F4E0361F72732A00EB91FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F4E0351F72732A00EB91FC /* Assets.xcassets */; };
 		86F4E0391F72732A00EB91FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F4E0371F72732A00EB91FC /* LaunchScreen.storyboard */; };
-		86F4E0411F7275FB00EB91FC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4E0401F7275FB00EB91FC /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0ACD855E54DA0383CFB3C3BE /* Pods-SocketIOExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketIOExam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocketIOExam/Pods-SocketIOExam.debug.xcconfig"; sourceTree = "<group>"; };
-		862D77E81F79F0CA008258ED /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
-		862D77EB1F7A140A008258ED /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
-		862D77ED1F7A1421008258ED /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		862B08041F7DF3D500CF563B /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		862B08061F7DF8A000CF563B /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
+		862B08081F7DFEEF00CF563B /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
+		862B080A1F7DFF8600CF563B /* ChatLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewModel.swift; sourceTree = "<group>"; };
+		862B080C1F7E05E200CF563B /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		862D77F01F7A37D3008258ED /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		862D77F31F7A3FD5008258ED /* ConversationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCollectionViewCell.swift; sourceTree = "<group>"; };
-		8668A08E1F736CEF0074DF7B /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		862D77F71F7A45AE008258ED /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		862D77FA1F7A46BF008258ED /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		862D77FD1F7A46EF008258ED /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		868A09DF1F7B43E00011C1E7 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		868A0A001F7BA0640011C1E7 /* NSManagedObjectExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExt.swift; sourceTree = "<group>"; };
+		86CEA4011F7C9DE000D0E788 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		86CEA4071F7CA99100D0E788 /* SocketIOExam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SocketIOExam.xcdatamodel; sourceTree = "<group>"; };
+		86CEA4081F7CA9B200D0E788 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		86CEA40A1F7CA9C300D0E788 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		86CEA40C1F7CA9CF00D0E788 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		86F4E02B1F72732A00EB91FC /* SocketIOExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketIOExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F4E02E1F72732A00EB91FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		86F4E0301F72732A00EB91FC /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		86F4E0331F72732A00EB91FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86F4E0351F72732A00EB91FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86F4E0381F72732A00EB91FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86F4E03A1F72732A00EB91FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86F4E0401F7275FB00EB91FC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CBED74DD750FD7AF31A5DC39 /* Pods_SocketIOExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocketIOExam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C677B33C76ED4886B73E63 /* Pods-SocketIOExam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketIOExam.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocketIOExam/Pods-SocketIOExam.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,8 +92,10 @@
 		862D77EA1F7A1372008258ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				862D77EB1F7A140A008258ED /* Conversation.swift */,
-				862D77ED1F7A1421008258ED /* Friend.swift */,
+				86CEA4061F7CA99100D0E788 /* SocketIOExam.xcdatamodeld */,
+				86CEA4081F7CA9B200D0E788 /* Conversation.swift */,
+				86CEA40A1F7CA9C300D0E788 /* Friend.swift */,
+				86CEA40C1F7CA9CF00D0E788 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -84,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				862D77F01F7A37D3008258ED /* FriendsViewModel.swift */,
+				86CEA4011F7C9DE000D0E788 /* BaseViewModel.swift */,
+				862B080A1F7DFF8600CF563B /* ChatLogViewModel.swift */,
 			);
 			name = ViewModels;
 			path = SocketIOExam/ViewModels;
@@ -93,8 +115,38 @@
 			isa = PBXGroup;
 			children = (
 				862D77F31F7A3FD5008258ED /* ConversationCollectionViewCell.swift */,
+				862B080C1F7E05E200CF563B /* MessageCollectionViewCell.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		862D77F61F7A45A4008258ED /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				862D77F71F7A45AE008258ED /* UIViewExt.swift */,
+				868A0A001F7BA0640011C1E7 /* NSManagedObjectExt.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		862D77F91F7A46A2008258ED /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				862D77FA1F7A46BF008258ED /* FriendsViewController.swift */,
+				862B08061F7DF8A000CF563B /* MainTabbarController.swift */,
+				862B08081F7DFEEF00CF563B /* ChatLogViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		862D77FC1F7A46DC008258ED /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				862D77FD1F7A46EF008258ED /* SocketIOManager.swift */,
+				868A09DF1F7B43E00011C1E7 /* CoreDataStack.swift */,
+				862B08041F7DF3D500CF563B /* AppInfo.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		86F4E0221F72732A00EB91FC = {
@@ -118,18 +170,17 @@
 		86F4E02D1F72732A00EB91FC /* SocketIOExam */ = {
 			isa = PBXGroup;
 			children = (
+				862D77FC1F7A46DC008258ED /* Helpers */,
+				862D77F91F7A46A2008258ED /* ViewControllers */,
+				862D77F61F7A45A4008258ED /* Extentions */,
 				862D77F21F7A3FBB008258ED /* CustomViews */,
 				862D77EF1F7A37B6008258ED /* ViewModels */,
 				862D77EA1F7A1372008258ED /* Models */,
 				86F4E02E1F72732A00EB91FC /* AppDelegate.swift */,
-				86F4E0301F72732A00EB91FC /* FriendsViewController.swift */,
 				86F4E0321F72732A00EB91FC /* Main.storyboard */,
 				86F4E0351F72732A00EB91FC /* Assets.xcassets */,
 				86F4E0371F72732A00EB91FC /* LaunchScreen.storyboard */,
 				86F4E03A1F72732A00EB91FC /* Info.plist */,
-				86F4E0401F7275FB00EB91FC /* ChatViewController.swift */,
-				8668A08E1F736CEF0074DF7B /* SocketIOManager.swift */,
-				862D77E81F79F0CA008258ED /* UIViewExt.swift */,
 			);
 			path = SocketIOExam;
 			sourceTree = "<group>";
@@ -257,15 +308,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862D77FB1F7A46C1008258ED /* FriendsViewController.swift in Sources */,
+				86CEA4021F7C9DE000D0E788 /* BaseViewModel.swift in Sources */,
+				862B08071F7DF8A000CF563B /* MainTabbarController.swift in Sources */,
+				868A0A011F7BA0640011C1E7 /* NSManagedObjectExt.swift in Sources */,
+				862B080D1F7E05E200CF563B /* MessageCollectionViewCell.swift in Sources */,
+				862D77F81F7A4656008258ED /* UIViewExt.swift in Sources */,
 				862D77F11F7A37D3008258ED /* FriendsViewModel.swift in Sources */,
 				862D77F41F7A3FD5008258ED /* ConversationCollectionViewCell.swift in Sources */,
-				8668A08F1F736CEF0074DF7B /* SocketIOManager.swift in Sources */,
-				862D77EE1F7A1421008258ED /* Friend.swift in Sources */,
-				86F4E0311F72732A00EB91FC /* FriendsViewController.swift in Sources */,
-				862D77E91F79F0CA008258ED /* UIViewExt.swift in Sources */,
-				862D77EC1F7A140A008258ED /* Conversation.swift in Sources */,
-				86F4E0411F7275FB00EB91FC /* ChatViewController.swift in Sources */,
+				862B08091F7DFEEF00CF563B /* ChatLogViewController.swift in Sources */,
+				862D77FE1F7A46F2008258ED /* SocketIOManager.swift in Sources */,
+				86CEA4111F7CD07600D0E788 /* SocketIOExam.xcdatamodeld in Sources */,
+				868A09E01F7B43E00011C1E7 /* CoreDataStack.swift in Sources */,
+				86CEA4091F7CA9B200D0E788 /* Conversation.swift in Sources */,
+				862B080B1F7DFF8600CF563B /* ChatLogViewModel.swift in Sources */,
+				86CEA40D1F7CA9CF00D0E788 /* Message.swift in Sources */,
 				86F4E02F1F72732A00EB91FC /* AppDelegate.swift in Sources */,
+				86CEA40B1F7CA9C300D0E788 /* Friend.swift in Sources */,
+				862B08051F7DF3D500CF563B /* AppInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +512,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		86CEA4061F7CA99100D0E788 /* SocketIOExam.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				86CEA4071F7CA99100D0E788 /* SocketIOExam.xcdatamodel */,
+			);
+			currentVersion = 86CEA4071F7CA99100D0E788 /* SocketIOExam.xcdatamodel */;
+			path = SocketIOExam.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 86F4E0231F72732A00EB91FC /* Project object */;
 }

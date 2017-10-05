@@ -25,8 +25,13 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+        collectionView?.reloadData()
+    }
 
-    //MARK: -Collectionview
+    //MARK: -Collectionview  
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! ConversationCollectionViewCell
@@ -44,6 +49,17 @@ class FriendsViewController: UICollectionViewController, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 100)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let conversation = conversationsViewModel.item(at: indexPath) {
+            let flowLayout = UICollectionViewFlowLayout()
+            let chatLogVC = ChatLogViewController(collectionViewLayout: flowLayout)
+            chatLogVC.conversationID = conversation.objectID
+            self.navigationController?.pushViewController(chatLogVC, animated: true)
+        }
+        
+        
     }
 }
 
